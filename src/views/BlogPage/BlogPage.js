@@ -12,7 +12,35 @@ var urlCrypt = require('url-crypt')('~{ry*I)==yU/]9<7DPk!Hj"R#:-/Z7(hTBnlRS=4CXF
 
 export const BlogPage = () => {
 
-    const username = localStorage.getItem('HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUu1Vv1a6yfkadE2T');
+    let decryptedData_username = myFunction();
+
+
+
+    function myFunction() {
+
+        let decryptedData = localStorage.getItem('HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUu1Vv1a6yfkadE2T');
+
+        if (decryptedData) {
+
+            //decrypted 
+            var bytes = CryptoJS.AES.decrypt(decryptedData, 'my-secret-key@123');
+            var decryptedData_username = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+            return decryptedData_username;
+
+        }
+        else
+            return null;
+
+    }
+
+
+
+
+
+
+
+
+    //const username = localStorage.getItem('HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUu1Vv1a6yfkadE2T');
 
     // extract id 
     const { id } = useParams();
@@ -26,8 +54,8 @@ export const BlogPage = () => {
 
 
     // decrypt username tokken
-    var bytes_username = CryptoJS.AES.decrypt(username, 'my-secret-key@123');
-    var decryptedData_username = JSON.parse(bytes_username.toString(CryptoJS.enc.Utf8));
+    //var bytes_username = CryptoJS.AES.decrypt(username, 'my-secret-key@123');
+    //var decryptedData_username = JSON.parse(bytes_username.toString(CryptoJS.enc.Utf8));
 
 
 
@@ -44,7 +72,7 @@ export const BlogPage = () => {
 
 
 
-    // fetch movies
+    // fetch 
     useEffect(() => {
         axios.get(`http://54.38.33.104:8000/api/oneBlog/${base64}`) //
             .then(res => {
