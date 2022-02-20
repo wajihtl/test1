@@ -7,7 +7,6 @@ import { useHistory, useParams } from "react-router-dom";
 import axios from 'axios';
 import styled from "styled-components";
 import ReactLoading from "react-loading";
-import { constant } from "lodash";
 
 
 
@@ -124,7 +123,6 @@ function Edit() {
 
                 alert('deleted!');
                 history.push('/');
-
 
             })
 
