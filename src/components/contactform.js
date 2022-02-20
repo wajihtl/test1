@@ -17,13 +17,11 @@ const ContactForm = () => {
     e.preventDefault();
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
       .then((result) => {
-        console.log(result.text);
         Swal.fire({
           icon: 'success',
           title: 'Message Sent Successfully'
         })
       }, (error) => {
-        console.log(error.text);
         Swal.fire({
           icon: 'error',
           title: 'Ooops, something went wrong',
@@ -37,8 +35,8 @@ const ContactForm = () => {
     <div>
       <div className='ContactForm' >
         <Form onSubmit={handleOnSubmit}>
-          
-         
+
+
           <Form.Field
             id='form-input-control-email'
             control={Input}

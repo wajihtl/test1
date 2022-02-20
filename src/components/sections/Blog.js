@@ -18,7 +18,7 @@ const Blog = ({ owner, description, title, Category, id }) => {
     function Check_Admin() {
         let decryptedData_username = localStorage.getItem('HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUu1Vv1a6yfkadE2T');
 
-        if (decryptedData_username && flag == 'admin') {
+        if (decryptedData_username && flag === 'admin') {
 
             //decrypted 
             var bytes = CryptoJS.AES.decrypt(decryptedData_username, 'my-secret-key@123');
@@ -67,7 +67,7 @@ const Blog = ({ owner, description, title, Category, id }) => {
 
         axios.get(`http://54.38.33.104:8000/api/Flag/${base64}/${flag}`) //
             .then(res => {
-                if (res.data.state === "success" || Check_Admin() == 'wajihtl')
+                if (res.data.state === "success" || Check_Admin() === 'wajihtl')
                     window.location.href = `/Blogs/${base642}`;
 
                 else {

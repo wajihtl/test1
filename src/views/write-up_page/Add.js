@@ -73,7 +73,7 @@ function Add() {
                 setLoading(false);
                 return;
             }
-            console.log(userInfo);
+
 
             axios.post(`http://54.38.33.104:8000/api/blogs`, { // 
                 title: userInfo.title,

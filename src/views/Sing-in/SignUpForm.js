@@ -40,8 +40,7 @@ class SignUpForm extends Component {
 
         e.preventDefault();
 
-        console.log("The form was submitted with the following data:");
-        console.log(this.state);
+
         try {
             this.state.phoneNumber = parseInt(this.state.phoneNumber);
             axios.post(`http://54.38.33.104:8000/api/signup`, this.state)
