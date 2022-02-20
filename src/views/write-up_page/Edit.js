@@ -52,7 +52,7 @@ function Edit() {
         description: "",
         username: "/api/users/" + token,
         DateCreatedAt: date,
-        //flag: ''
+        flag: '',
 
     });
 
@@ -98,12 +98,12 @@ function Edit() {
             [e.target.name]: e.target.value
         });
     }
-    /* const onflag = (e) => {
+    const onflag = (e) => {
         setuserInfo({
             ...userInfo,
             [e.target.name]: e.target.value
         });
-    } */
+    }
 
     const oncontent = (value) => {
 
@@ -140,7 +140,7 @@ function Edit() {
                 Category: userInfo.category || BlogContent.category,
                 description: userInfo.description || BlogContent.description,
                 username: userInfo.username || BlogContent.username,
-                //flag: userInfo.flag || BlogContent.flag,
+                flag: userInfo.flag || BlogContent.flag,
             })
 
                 .then(res => {
@@ -186,10 +186,10 @@ function Edit() {
                                             <label className="font-weight-bold">Description<Span > * </Span> </label>
                                             <input type="text" name="description" value={userInfo.description ? userInfo.description : BlogContent.description} onChange={ondescription} className="form-control" placeholder="Description" required style={{ backgroundColor: "whitesmoke" }} />
                                         </div>
-                                        {/*  <div className="form-group col-md-12">
+                                        <div className="form-group col-md-12">
                                             <label className="font-weight-bold" style={{ marginRight: "4vw" }}>Flag<Span > * </Span> </label>
                                             <input type="text" name="flag" value={userInfo.flag ? userInfo.flag : BlogContent.flag} onChange={onflag} className="form-control" placeholder="Flag" required style={{ backgroundColor: "whitesmoke" }} />
-                                        </div> */}
+                                        </div>
 
 
                                         <Clearfix ></Clearfix>

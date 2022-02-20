@@ -11,7 +11,7 @@ const Confirmation = () => {
     axios.put(`http://54.38.33.104:8000/api/ActivateAccount/${ActivateAccount}`, {}) //
       .then(res => {
         if (res.data.success === true) {
-          window.location = '/Auth#/sign-in';
+          window.location = 'http://54.38.33.104:80/Auth#/sign-in';
         }
       }, [])
   })
