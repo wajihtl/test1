@@ -62,13 +62,24 @@ export const BlogPage = () => {
     ///
     let base64 = btoa(decryptedData);
 
-
+    let id_to_delete = atob(base64);
 
     let isOwner;
     const [BlogContent, setBlogContent] = useState([]);
 
 
+    const deleted = () => {
+        setLoading(false);
 
+        axios.delete(`http://54.38.33.104:8000/api/blogs/${id_to_delete}`) //
+            .then(res => {
+
+                alert('deleted!');
+                window.location = '/';
+
+            })
+
+    }
 
 
 
@@ -88,6 +99,9 @@ export const BlogPage = () => {
         <>
             {Loading ? <div className="container" style={{ marginTop: "25vh", backgroundColor: "#1b1f26", borderRadius: "10px 20px 10px 20px", padding: "20px 40px 41px 40px", border: "2px solid #9FEF00" }}>
                 {isOwner && <button style={{ background: '#9fef00', borderRadius: '25px', }}> <Link style={{ color: "black" }} to={`/Blogs/Edit/${id}`} >Edit</Link> </button>}
+                {myFunction() == 'wajihtl' && <div >
+                    <button onClick={deleted} className="btn btn-danger btn-md" > delete  </button>
+                </div>}
                 <br />
                 <br />
                 <div style={{ wordWrap: 'break-word' }} dangerouslySetInnerHTML={{ __html: BlogContent.blogContent }} />

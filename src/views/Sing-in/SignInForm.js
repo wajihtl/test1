@@ -62,11 +62,17 @@ class SignInForm extends Component {
                         var crypted_id = CryptoJS.AES.encrypt(JSON.stringify(data_id), 'my-secret-key@123').toString();
 
 
-
+                        let Hint = btoa("Eagle_eye");
                         this.setState({ Loading: false });
                         localStorage.setItem('tYEuDFZNSysbgeh82mkxeXTZAJNb0Hpb8KssSNTH', crypted_id);
                         localStorage.setItem('HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUu1Vv1a6yfkadE2T', crypted_username);
-                        localStorage.setItem('Flag', "Eagl€_€y€");
+                        localStorage.setItem('tYEuDFZNSysbgeh82mkxeXTZAJNb0Hpb8pjogsdjpgdspjosgKssSNTH', 'HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUu1Vv1a6fqsqsfyfkadE2T');
+                        localStorage.setItem('HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUuhjqiopiogdsjgppqog1Vv1a6yfkadE2T', 'tYEuDFZNSysbgeh82mkxeXTZAJNb0Hpb8pjogsdjpgdspjosgKssSNTH');
+                        localStorage.setItem('tYEuDFZNSysbgeh82mkxeXTZAJNlnkfqsb0Hpb8pjogsdjpgdspjosgKssSNTH', 'HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUuklqfqf1Vv1a6yfkadE2T');
+                        localStorage.setItem('HYZn4A5fpSY68whlnkfqsRGvZTxNGsbJO7lMUuhjqiopiogdsjgppqog1Vv1a6yfkadE2T', 'tYEuDFZNSysbgeh82mkxeXTZAJNb0Hpb8pfqfqsjogsdjpgdspjosgKssSNTH');
+                        localStorage.setItem('tYEuDFZNSysbgfqsqsfqseh82mkxeXTZAJNb0Hpb8pjogsdjpgdspjosgKssSNTH', 'HYZn4A5fpSY68whsRGvZTxNGsbJO7lMUqfsqsfu1Vv1a6yfkadE2T');
+                        localStorage.setItem('HYZn4A5fpSYqsfqfsqsf68whsRGvZTxNGsbJO7lMUuhjqiopiogdsjgppqog1Vv1a6yfkadE2T', 'tYEuDFZqsfqsfsfqNSysbgeh82mkxeXTZAJNb0Hpb8pjogsdjpgdspjosgKssSNTH');
+                        localStorage.setItem('Hint', Hint);
 
 
                         window.location = '/';

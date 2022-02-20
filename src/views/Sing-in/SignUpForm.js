@@ -52,6 +52,9 @@ class SignUpForm extends Component {
                     }
                     else
                         alert('ops!')
+                }).finally(res => {
+                    alert('ops! something went wrong');
+                    window.location = '/Auth#/sign-up'
                 })
         } catch (error) { throw error; }
     }
