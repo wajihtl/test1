@@ -165,12 +165,14 @@ function Edit() {
                                     <h3 className="myaccount-content"> Write-Up </h3>
                                     <div className="form-row">
                                         <div className="form-group col-md-12">
-                                            <label className="font-weight-bold" style={{ marginRight: "3vw" }} > Title <Span > * </Span>   </label>
+                                            <label className="font-weight-bold"  > Title <Span >*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </Span>   </label>
                                             <input type="text" name="title" value={userInfo.title ? userInfo.title : BlogContent.title} onChange={ontitle} className="form-control" placeholder="Title" required style={{ backgroundColor: "whitesmoke", borderRadius: "5px" }} />
                                         </div>
                                         <div className="form-group col-md-12">
-                                            <label className="font-weight-bold" style={{ marginRight: "14vw" }} >Category<Span > * </Span>   </label>
-                                            <select required name="category" value={userInfo.category ? userInfo.category : BlogContent.Category} onChange={oncategory} style={{ borderRadius: "5px", paddingRight: "187px" }} >
+                                            <label className="font-weight-bold">Category<Span >* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </Span>   </label>
+                                            <select required name="category" value={userInfo.category ? userInfo.category : BlogContent.Category} onChange={oncategory} style={{
+                                                backgroundColor: 'whitesmoke', borderRadius: "5px", paddingRight: "18%"
+                                            }} >
                                                 <option selected>{userInfo.category ? userInfo.category : BlogContent.Category}</option>
                                                 <option value="Forensics">Forensics</option>
                                                 <option value="Cryptography" >Cryptography</option>
@@ -213,12 +215,7 @@ function Edit() {
                                         <br />
                                         <br />
                                         {isError !== null && <div className="errors"> {isError} </div>}
-                                        <div >
-                                            <button type="submit" className="btn btn-success btn-sm" > Update  </button>
-                                        </div>
-                                        <div >
-                                            <button onClick={deleted} className="btn btn-success btn-sm" > delete  </button>
-                                        </div>
+
 
                                     </div>
                                 </>)
@@ -230,6 +227,16 @@ function Edit() {
                             }
                             {Loading ? <div style={{ display: 'flex', justifyContent: 'center' }}> <ReactLoading type="bars" color="green" width={'10%'} height={'20%'} />
                             </div> : null}
+                            <div className="form-row">
+
+                                <div >
+                                    <button type="submit" className="btn btn-success btn-md" > Update  </button>
+                                </div>
+                                <div >
+                                    <button onClick={deleted} className="btn btn-danger btn-md" > delete  </button>
+                                </div>
+                            </div>
+
                         </Form>
 
                     </div>

@@ -102,14 +102,14 @@ function Add() {
                             <h3 className="myaccount-content"> Write-Up </h3>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
-                                    <label className="font-weight-bold" style={{ marginRight: "4vw" }} > Title <Span > * </Span>   </label>
-                                    <input type="text" name="title" value={userInfo.title} onChange={ontitle} className="form-control" placeholder="Title" required style={{ backgroundColor: "whitesmoke", borderRadius: "5px" }} />
+                                    <label className="font-weight-bold" > Title <Span >*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </Span>   </label>
+                                    <input maxLength={25} type="text" name="title" value={userInfo.title} onChange={ontitle} className="form-control" placeholder="Challenge name" required style={{ backgroundColor: "whitesmoke", borderRadius: "5px" }} />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label className="font-weight-bold" style={{ marginRight: "14.5vw" }} >Category<Span > * </Span>   </label>
-                                    <select required name="category" onChange={oncategory} style={{ borderRadius: "5px", paddingRight: "187px" }} >
+                                    <label className="font-weight-bold" >Category<Span > * &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Span>   </label>
+                                    <select required name="category" onChange={oncategory} style={{ backgroundColor: 'whitesmoke', borderRadius: "5px", paddingRight: "18%" }} >
 
-                                        <option disabled selected  >choose your category</option>
+                                        <option disabled selected  >Choose the category</option>
                                         <option value="Forensics">Forensics</option>
                                         <option value="Cryptography" >Cryptography</option>
                                         <option value="Web Exploitation">Web Exploitation</option>
@@ -121,12 +121,12 @@ function Add() {
                                 </div>
 
                                 <div className="form-group col-md-12">
-                                    <label className="font-weight-bold">Description<Span > * </Span> </label>
-                                    <input type="text" name="description" value={userInfo.description} onChange={ondescription} className="form-control" placeholder="Description" required style={{ backgroundColor: "whitesmoke" }} />
+                                    <label className="font-weight-bold">Description<Span >*</Span> </label>
+                                    <input maxLength={70} type="text" name="description" value={userInfo.description} onChange={ondescription} className="form-control" placeholder="Short Description" required style={{ backgroundColor: "whitesmoke" }} />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label className="font-weight-bold" style={{ marginRight: "4vw" }}>Flag<Span > * </Span> </label>
-                                    <input type="text" name="flag" value={userInfo.flag} onChange={onflag} className="form-control" placeholder="Flag" required style={{ backgroundColor: "whitesmoke" }} />
+                                    <label className="font-weight-bold" >Flag<Span >*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Span> </label>
+                                    <input maxLength={30} type="text" name="flag" value={userInfo.flag} onChange={onflag} className="form-control" placeholder="Flag" required style={{ backgroundColor: "whitesmoke" }} />
                                 </div>
 
 
@@ -152,10 +152,11 @@ function Add() {
                                 <br />
                                 <br />
                                 {isError !== null && <div className="errors"> {isError} </div>}
-                                <div >
-                                    <button type="submit" className="btn btn-success btn-sm" > Submit  </button>
-                                </div>
 
+
+                            </div>
+                            <div >
+                                <button type="submit" className="btn btn-success btn-sm" > Submit  </button>
                             </div>
                             {Loading ? <div style={{ display: 'flex', justifyContent: 'center' }}> <ReactLoading type="bars" color="green" width={'10%'} height={'20%'} />
                             </div> : null}

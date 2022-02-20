@@ -46,7 +46,7 @@ const Footer = ({
 
           </div>
           <div className="footer-bottom text-xxs invert-order-desktop" >
-            Made by <a href="#"> SecuriNets ESPRIT </a>
+            Made by <a href="#" title='All credits goes to: Wajih, Yassine, Mahdi, Dahmoun and Feriel.'> Web Team SecuriNets ESPRIT </a>
             <div className="footer-right" >Our Social Media </div>
             <div className="footer-top" >
               &copy; {new Date().getFullYear()} Copyright

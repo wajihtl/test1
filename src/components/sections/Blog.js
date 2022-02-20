@@ -9,7 +9,6 @@ import ReactLoading from "react-loading";
 
 
 
-
 const Blog = ({ owner, description, title, Category, id }) => {
 
     var CryptoJS = require("crypto-js");
@@ -64,11 +63,13 @@ const Blog = ({ owner, description, title, Category, id }) => {
 
 
         <div className="tiles-item " data-reveal-delay="200">
+
             <div className="tiles-item-inner" >{owner}
                 <div className="testimonial-item-content" >
                     <p style={{ width: "200px", color: "whitesmoke", wordWrap: "break-word" }}>
                         {description}
                     </p>
+
 
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -76,7 +77,10 @@ const Blog = ({ owner, description, title, Category, id }) => {
                     <span className="testimonial-item-link"><Link to={`/Blogs/Category/${Category}`} className="text-color-low">/ {Category}</Link>
                     </span>
                     <br />
-                    <Popup trigger={<div className="btne from-top">see more</div>}>
+
+
+                    <Popup trigger={<div className="btne from-top" >Click me to see more!</div>}>
+
                         <input onKeyDown={handleKeyDown} onChange={event => setFlag(event.target.value)} type="text" name="flag" className="form-control" placeholder="you need to enter the flag first" required style={{ backgroundColor: "whitesmoke", borderRadius: "5px" }} />
 
                         <Link onClick={check} style={{ color: verif ? '#4a6e1f' : "red" }}>{verif ? "check" : "wrong flag \u274C "}
@@ -85,11 +89,14 @@ const Blog = ({ owner, description, title, Category, id }) => {
                         </div> : null}
                     </Popup>
 
+
                 </div>
 
             </div>
 
+
         </div >
+
 
 
 

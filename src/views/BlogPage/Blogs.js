@@ -16,7 +16,7 @@ const Blogs = () => {
         axios.get(`http://54.38.33.104:8000/api/AllBlogs`) //
 
             .then(res => {
-                setBlogs(res.data);
+                setBlogs(res.data.reverse());
                 setLoading(true);
             }
             )
